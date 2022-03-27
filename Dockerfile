@@ -1,7 +1,7 @@
-FROM java:11
+FROM java:8
 
 EXPOSE 8080
 
-ADD target/DockerKubernetesKibanaPrometheus.jar DockerKubernetesKibanaPrometheus.jar
+ADD target/docker-kubernetes-kibana-prometheus.jar docker-kubernetes-kibana-prometheus.jar
 
-ENTRYPOINT ["java","-jar","DockerKubernetesKibanaPrometheus.jar"]
+ENTRYPOINT ["java","-jar","docker-kubernetes-kibana-prometheus.jar"]
