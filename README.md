@@ -17,7 +17,18 @@ But,
 denied: requested access to the resource is denied
 
 
-For pushing docker image to docker registry using JIB(open-source, by Google) plugin:
+For pushing docker image to docker registry using JIB(open-source, by Google) plugin(did not work):
 - don't need to write a dockerfile
 - don't even have to have docker installed
 - saves us separate docker build/push commands and simplifies adding this to a CI pipeline
+
+
+Manual Process(Working):
+1) Reach to the project folder in CMD, where Dockerfile exists
+2) Run -> docker build -t docker-kubernetes-kibana-prometheus
+3) Run -> docker tag docker-kubernetes-kibana-prometheus:0.0.1-SNAPSHOT ibsanchar/docker-kubernetes-kibana-prometheus
+4) Run -> docker push ibsanchar/docker-kubernetes-kibana-prometheus
+
+Simple command to run the application inside docker:
+docker run -p 8080:8080 ibsanchar/docker-kubernetes-kibana-prometheus
+
